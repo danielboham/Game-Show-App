@@ -21,4 +21,4 @@ logPhrase(game.getRandomPhrase());
 logPhrase(game.getRandomPhrase());
 logPhrase(game.getRandomPhrase());
 logPhrase(game.getRandomPhrase());
-*/
+ */
