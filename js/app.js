@@ -2,23 +2,26 @@
  * Project 4 - OOP Game App
  * app.js */
 
-// Test - const phrase = new Phrase("Hello Does This Work?");
-// console.log(`${phrase.phrase}`);
+/*
+const phrase = new Phrase("Hello Does This Work?");
+console.log(`${phrase.phrase}`);
+phrase.addPhraseToDisplay();
+*/
 
-/* Test - const game = new Game();
+/*
+const game = new Game();
 game.phrases.forEach((phrase, index) => {
     console.log(`Phrase ${index} - phrase: ${phrase.phrase}`);
 });
 */
-
-/* Test -
+/*
 const logPhrase = (phrase) => {
     console.log(`Phrase - phrase: `, phrase.phrase);
 };
 const game = new Game();
 logPhrase(game.getRandomPhrase());
-logPhrase(game.getRandomPhrase());
-logPhrase(game.getRandomPhrase());
-logPhrase(game.getRandomPhrase());
-logPhrase(game.getRandomPhrase());
- */
+*/
+
+const check = new Game();
+check.getRandomPhrase().addPhraseToDisplay();
+
