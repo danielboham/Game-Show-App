@@ -22,5 +22,14 @@ class Game {
     getRandomPhrase(){
         return this.phrases[Math.floor(Math.random()*this.phrases.length)];
     }
+    startGame(){
+        // Target div with overlay id and hide by setting style on display - none.
+        const overlay = document.getElementById('overlay');
+        overlay.style.display = "none";
+        // Store random phrase tot active phrase
+        this.activePhrase = this.getRandomPhrase();
+        // call addPhraseToDisplay with activePhrase value
+        this.activePhrase.addPhraseToDisplay();
+    }
 }
 
