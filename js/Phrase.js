@@ -16,8 +16,8 @@ class Phrase {
             let li = document.createElement('li');
         // Conditional statement for giving different id's
             if(letter !== " ") {
-                li.setAttribute("id", ` hide letter ${letter}`)
-            } else li.setAttribute("id", "hide space");
+                li.setAttribute("class", ` hide letter ${letter}`)
+            } else li.setAttribute("class", "hide space");
         // Define the text in the li
             li.innerHTML = letter;
         // Append li to the ul
