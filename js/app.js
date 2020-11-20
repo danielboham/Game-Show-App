@@ -22,8 +22,15 @@ const game = new Game();
 logPhrase(game.getRandomPhrase());
 */
 
-const game = new Game();
+//const game = new Game();
 //game.getRandomPhrase().addPhraseToDisplay();
+//game.startGame();
+//console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
 
-game.startGame();
-console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
+
+const game = new Game();
+
+document.getElementById('btn__reset')
+        .addEventListener("click", event => {
+        game.startGame() }
+);
