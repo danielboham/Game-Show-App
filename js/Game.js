@@ -31,6 +31,11 @@ class Game {
         this.activePhrase = this.getRandomPhrase();
         // call addPhraseToDisplay with activePhrase value
         this.activePhrase.addPhraseToDisplay();
+        // test
+        this.activePhrase.checkLetter();
+    }
+    handleInteraction(){
+
     }
 }
 

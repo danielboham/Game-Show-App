@@ -7,7 +7,7 @@ class Phrase {
         this.phrase = phrase.toLowerCase();
     }
     addPhraseToDisplay() {
-        // Target ul emelemnt and identify which ul element it concerns
+        // Target ul element and identify which ul element it concerns
         let ull = document.getElementsByTagName('ul');
         let ul = ull[0];
         // Split the phrase into letters and loop through them
@@ -24,5 +24,29 @@ class Phrase {
             ul.appendChild(li);
         })
     }
+    checkLetter() {
+        // Create an array HTML object key
+        const keyboard = Array.from(document.getElementsByClassName('key'));
+        // Create an array from current phrase
+        let phraseArray = Array.from(this.phrase);
+        // console.log(phraseArray);
+
+        /* Check when use parameter
+        const check = phraseArray.includes(letter);
+        console.log(check);
+        */
+        // Add event listener for selected letter and stores selected letter in variable
+        keyboard.forEach(keys => {
+            keys.addEventListener("click", event => {
+                const character = keys.innerHTML;
+                // check if character is in phrase
+                const check = phraseArray.includes(character);
+                console.log(check);
+            });
+
+        });
+    }
 }
+
+
 
