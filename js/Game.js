@@ -34,10 +34,16 @@ class Game {
         // test
         this.activePhrase.checkLetter();
         // test
-        this.activePhrase.showMatchedLetter();
-    }
-    handleInteraction(){
+        //this.activePhrase.showMatchedLetter();
 
+    }
+    checkForWin(){
+        let win = document.getElementsByClassName("hide ");
+        if(win.length > 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
 

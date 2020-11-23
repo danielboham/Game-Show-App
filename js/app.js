@@ -33,7 +33,7 @@ const game = new Game();
 document.getElementById('btn__reset')
         .addEventListener("click", event => {
         game.startGame()
-        console.log(game.activePhrase.phrase);
+        //console.log(game.activePhrase.phrase);
         }
 );
 
