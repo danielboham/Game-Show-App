@@ -39,23 +39,3 @@ document.getElementById('btn__reset')
 
 //game.getRandomPhrase().addPhraseToDisplay();
 
-
-// select letter
-// Creates an array of HTML object
-const test = Array.from(document.getElementsByClassName('key'));
-// Add event listener for selecting letter
-test.forEach(letter => {
-        letter.addEventListener("click", event => {
-                let value = letter.innerHTML;
-                let currentPhrase = document.getElementById('phrase');
-                // target the ul element in currentPhrase
-                let phraseUL = currentPhrase.firstElementChild;
-                // convert phraseUL to an array
-                // SEE Guide! string as parameter!!!
-
-                // targetten in de DOM, een array van maken en dan use filter to check if letter is in phrase?
-        })
-
-})
-
-

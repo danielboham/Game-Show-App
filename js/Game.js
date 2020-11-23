@@ -33,6 +33,8 @@ class Game {
         this.activePhrase.addPhraseToDisplay();
         // test
         this.activePhrase.checkLetter();
+        // test
+        this.activePhrase.showMatchedLetter();
     }
     handleInteraction(){
 
