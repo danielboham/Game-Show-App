@@ -57,14 +57,22 @@ class Game {
         if (this.missed < 5) {
             lives.src = "images/lostHeart.png";
         } else if (this.missed === 5) {
-            console.log("this.gameOver();");
+            this.gameOver(false);
         }
-
-
-        console.log(this.missed);
+        //console.log(this.missed);
     }
-    gameOver() {
+    gameOver(boolean) {
+        const overlay = document.getElementById('overlay');
+        overlay.style.display = "flex";
+        let gameOverMessage = document.querySelector('#game-over-message');
 
+        if(boolean === false) {
+            overlay.setAttribute("class", "lose");
+            gameOverMessage.innerHTML = "Better luck next time!";
+        } else if (boolean === true) {
+            overlay.setAttribute("class", "win");
+            gameOverMessage.innerHTML = "Yes you are a winner!";
+        }
     }
 }
 
