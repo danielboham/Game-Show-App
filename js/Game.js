@@ -32,7 +32,7 @@ class Game {
         // call addPhraseToDisplay with activePhrase value
         this.activePhrase.addPhraseToDisplay();
         // test
-        this.activePhrase.checkLetter();
+        //this.activePhrase.checkLetter();
         // test
         //this.activePhrase.showMatchedLetter();
 
@@ -40,7 +40,6 @@ class Game {
     checkForWin() {
         // Get all elements with class hide..
         let win = document.getElementsByClassName("hide ");
-        console.log(win);
         // Conditional if the length of the HTML collection is > 0
         if(win.length > 0) {
             return false;
@@ -74,8 +73,24 @@ class Game {
             gameOverMessage.innerHTML = "Yes you are a winner!";
         }
     }
-    handleInteraction(button) {
-       console.log(button);
+    handleInteraction(key) {
+        // Disable key after Event listener click (see app.js)
+        key.disabled = true;
+        // Catch letter
+        const letter = key.innerHTML;
+        if(this.activePhrase.phrase.includes(letter)){
+            key.setAttribute("class", "chosen");
+            this.activePhrase.showMatchedLetter(letter);
+            if(this.checkForWin() === true) {
+                this.gameOver(true);
+            }
+
+        } else {
+            key.setAttribute("class", "wrong");
+            this.removeLife();
+        }
+
+
     }
 }
 
