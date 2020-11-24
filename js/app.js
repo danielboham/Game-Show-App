@@ -39,3 +39,9 @@ document.getElementById('btn__reset')
 
 //game.getRandomPhrase().addPhraseToDisplay();
 
+// Event listener for getting button and pass key to handleInteraction ()
+document.querySelectorAll(".key").forEach(key => {
+    key.addEventListener("click", event => {
+        game.handleInteraction(key);
+    })
+})

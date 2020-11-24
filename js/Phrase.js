@@ -48,23 +48,4 @@ class Phrase {
 
 }
 
-/*
-* checkLetter addEventListener alternative code
-*
-* //Create an array from the HTML object key
-  //const keyboard = Array.from(document.getElementsByClassName('key'));
-  // Create an array from current phrase
-    let phraseArray = Array.from(this.phrase);
-        // console.log(phraseArray);
 
-        // Add event listener for selected letter and stores selected letter in variable
-        keyboard.forEach(keys => {
-            keys.addEventListener("click", event => {
-                const character = keys.innerHTML;
-                // check if character is in phrase
-                const check = phraseArray.includes(character);
-                console.log(check);
-            });
-        });
-    }
-* */

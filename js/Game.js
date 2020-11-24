@@ -74,5 +74,8 @@ class Game {
             gameOverMessage.innerHTML = "Yes you are a winner!";
         }
     }
+    handleInteraction(button) {
+       console.log(button);
+    }
 }
 
