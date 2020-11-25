@@ -26,16 +26,10 @@ class Game {
         //Target div with overlay id and hide by setting style on display - none.
         const overlay = document.getElementById('overlay');
         overlay.style.display = "none";
-
         // Store random phrase tot active phrase
         this.activePhrase = this.getRandomPhrase();
         // call addPhraseToDisplay with activePhrase value
         this.activePhrase.addPhraseToDisplay();
-        // test
-        //this.activePhrase.checkLetter();
-        // test
-        //this.activePhrase.showMatchedLetter();
-
     }
     checkForWin() {
         // Get all elements with class hide..
@@ -58,7 +52,6 @@ class Game {
         } else if (this.missed === 5) {
             this.gameOver(false);
         }
-        //console.log(this.missed);
     }
     gameOver(boolean) {
         const overlay = document.getElementById('overlay');
@@ -68,9 +61,11 @@ class Game {
         if(boolean === false) {
             overlay.setAttribute("class", "lose");
             gameOverMessage.innerHTML = "Better luck next time!";
+            this.resetGame();
         } else if (boolean === true) {
             overlay.setAttribute("class", "win");
             gameOverMessage.innerHTML = "Yes you are a winner!";
+            this.resetGame();
         }
     }
     handleInteraction(key) {
@@ -84,13 +79,31 @@ class Game {
             if(this.checkForWin() === true) {
                 this.gameOver(true);
             }
-
         } else {
             key.setAttribute("class", "wrong");
             this.removeLife();
         }
-
-
+    }
+    resetGame(){
+        // Target ul element and identify which ul element it concerns
+        let ull = document.querySelectorAll('ul');
+        let ul = ull[0];
+        // To loop through convert to array
+        let ulc = Array.from(ul.children);
+        ulc.forEach(ulc => {
+            ul.removeChild(ulc);
+        })
+        // Target keys, loop through them and change class
+        let keys= document.querySelectorAll('#qwerty button');
+        keys.forEach(key => {
+            key.setAttribute("class", "key");
+            key.disabled = false;
+        })
+        // Target heart img, loop through them and change scr
+        let lives = document.querySelectorAll('#scoreboard img');
+        lives.forEach(lives => {
+            lives.src = "images/liveHeart.png";
+        })
     }
 }
 

@@ -12,7 +12,6 @@ class Phrase {
         let ull = document.getElementsByTagName('ul');
         let ul = ull[0];
         // Split the phrase into letters and loop through them
-
         const letters = this.phrase.split('');
         letters.forEach(letter => {
             let li = document.createElement('li');
