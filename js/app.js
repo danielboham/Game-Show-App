@@ -1,9 +1,8 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * app.js */
+/* app.js Phrase Hunter */
 
 let game;
 
+// Start new Game by clicking start button
 document.getElementById('btn__reset')
         .addEventListener("click", event => {
         game = new Game();
@@ -17,3 +16,5 @@ document.querySelectorAll(".key").forEach(key => {
         game.handleInteraction(key);
     })
 })
+
+

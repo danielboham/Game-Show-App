@@ -1,6 +1,4 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * Phrase.js */
+/* Phrase.js Phrase Hunter */
 
 class Phrase {
     constructor(phrase) {
@@ -26,8 +24,9 @@ class Phrase {
         })
     }
 
+    // Checks if a letter is in the phrase and returns a boolean
     checkLetter(letter) {
-        if (this.phrase.includes(letter)) {
+        if(this.phrase.includes(letter)) {
             return true;
         } else {
             return false;

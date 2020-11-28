@@ -1,6 +1,4 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * Game.js */
+/* Game.js Phrase Hunter */
 
 class Game {
     constructor() {
@@ -15,7 +13,7 @@ class Game {
             new Phrase("Open air museum Rome"),
             new Phrase("The beaches of spain"),
             new Phrase("The city of Love"),
-            new Phrase("Would you like some Heineken")
+            new Phrase("Would you like 3 some Heineken")
         ]
         return array;
     }
@@ -55,6 +53,7 @@ class Game {
     }
     gameOver(boolean) {
         const overlay = document.getElementById('overlay');
+        // Put display from none to flex
         overlay.style.display = "flex";
         let gameOverMessage = document.querySelector('#game-over-message');
 
@@ -73,7 +72,7 @@ class Game {
         key.disabled = true;
         // Catch letter
         const letter = key.innerHTML;
-        if(this.activePhrase.phrase.includes(letter)){
+        if(this.activePhrase.checkLetter(letter) === true) {
             key.setAttribute("class", "chosen");
             this.activePhrase.showMatchedLetter(letter);
             if(this.checkForWin() === true) {
